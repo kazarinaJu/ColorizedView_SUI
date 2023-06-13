@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color(.black)
-                .opacity(0.3)
+                .opacity(0.4)
                 .ignoresSafeArea()
             VStack {
                 Rectangle()
@@ -24,7 +24,8 @@ struct ContentView: View {
                         Color(
                             red: redSliderValue/255,
                             green: greenSliderValue/255,
-                            blue: blueSliderValue/255))
+                            blue: blueSliderValue/255)
+                        )
                     .cornerRadius(20)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 3))
                     .padding(.bottom, 40)
@@ -54,9 +55,9 @@ struct ColorSliderView: View {
         HStack {
             Text("\(lround(value))")
                 .foregroundColor(.white)
-                .font(.title)
-                .frame(width: 60)
-    
+                .font(.title3)
+                .frame(width: 50, alignment: .leading)
+            
             Slider(value: $value, in: 0...255, step: 1)
                 .accentColor(accentColor)
         }
