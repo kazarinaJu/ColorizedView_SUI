@@ -55,6 +55,7 @@ struct ColorSliderView: View {
             Text("\(lround(value))")
                 .foregroundColor(.white)
                 .font(.title)
+                .frame(width: 60)
     
             Slider(value: $value, in: 0...255, step: 1)
                 .accentColor(accentColor)
